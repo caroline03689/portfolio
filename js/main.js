@@ -241,21 +241,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Hero Contact Popup ---
-    var contactBtn = document.getElementById('hero-contact-btn');
-    var contactPopup = document.getElementById('contact-popup');
+    // --- Contact Popups ---
+    function setupPopup(btnId, popupId) {
+        var btn = document.getElementById(btnId);
+        var popup = document.getElementById(popupId);
 
-    if (contactBtn && contactPopup) {
-        contactBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            contactPopup.classList.toggle('open');
-        });
-        document.addEventListener('click', function(e) {
-            if (!contactPopup.contains(e.target) && e.target !== contactBtn) {
-                contactPopup.classList.remove('open');
-            }
-        });
+        if (btn && popup) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // close other popups
+                document.querySelectorAll('.contact-popup').forEach(function(p) {
+                    if (p !== popup) p.classList.remove('open');
+                });
+                popup.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!popup.contains(e.target) && e.target !== btn) {
+                    popup.classList.remove('open');
+                }
+            });
+        }
     }
+
+    setupPopup('hero-contact-btn', 'contact-popup');
+    setupPopup('contact-email-trigger', 'contact-popup-bottom');
 
     // Initial calls
     updateActiveNav();
