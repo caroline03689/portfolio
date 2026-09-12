@@ -197,24 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Video Cards: Hide overlay on play, show on pause/ended ---
-    var videoCards = document.querySelectorAll('[data-video]');
-    videoCards.forEach(function(preview) {
-        var video = preview.querySelector('video');
-        var overlay = preview.querySelector('.video-play-overlay');
-        if (!video || !overlay) return;
-
-        video.addEventListener('play', function() {
-            overlay.classList.add('hidden');
-        });
-        video.addEventListener('pause', function() {
-            overlay.classList.remove('hidden');
-        });
-        video.addEventListener('ended', function() {
-            overlay.classList.remove('hidden');
-        });
-    });
-
     // --- Portfolio Modal ---
     var modal = document.getElementById('portfolio-modal');
     var modalContent = document.getElementById('modal-content');
@@ -236,6 +218,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         function closeModal() {
+            // Pause any playing video in the modal
+            var modalVideos = modalContent.querySelectorAll('video');
+            modalVideos.forEach(function(v) { v.pause(); });
+
             modal.classList.remove('open');
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
