@@ -215,10 +215,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.classList.add('open');
                 document.body.style.overflow = 'hidden';
 
-                // Autoplay videos inside the modal (browsers require muted for autoplay)
+                // Pause any preview videos that might be playing in the cards
+                document.querySelectorAll('.portfolio-item video').forEach(function(pv) {
+                    pv.pause();
+                    pv.currentTime = 0;
+                });
+
+                // Autoplay videos inside the modal.
+                // persona/data/animated diagram are muted due to copyrighted voiceovers;
+                // explainer/demo play with sound.
+                var mutedModals = ['modal-video-1', 'modal-video-2', 'modal-video-4'];
+                var shouldMute = mutedModals.indexOf(modalId) !== -1;
                 var modalVideos = modalContent.querySelectorAll('video');
                 modalVideos.forEach(function(v) {
-                    v.muted = true;
+                    v.muted = shouldMute;
                     v.setAttribute('playsinline', '');
                     v.play().catch(function() {});
                 });
@@ -231,6 +241,12 @@ document.addEventListener('DOMContentLoaded', function() {
             modalVideos.forEach(function(v) {
                 v.pause();
                 v.currentTime = 0;
+            });
+
+            // Also pause any preview videos still playing in the portfolio grid
+            document.querySelectorAll('.portfolio-item video').forEach(function(pv) {
+                pv.pause();
+                pv.currentTime = 0;
             });
 
             modal.classList.remove('open');

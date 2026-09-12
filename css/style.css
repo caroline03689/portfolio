@@ -223,7 +223,8 @@ em { font-style: italic; }
     line-height: 1.45;
     margin-bottom: var(--space-lg);
     max-width: 520px;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
     hyphens: none;
     -webkit-hyphens: none;
 }
@@ -1120,6 +1121,7 @@ em { font-style: italic; }
     display: block;
     position: relative;
     z-index: 1;
+    pointer-events: none;
 }
 .video-preview .video-play-overlay {
     position: absolute;
@@ -1130,7 +1132,7 @@ em { font-style: italic; }
     justify-content: center;
     background: rgba(0,0,0,0.25);
     transition: opacity var(--transition);
-    pointer-events: none;
+    pointer-events: auto;
     z-index: 2;
 }
 .video-preview .video-play-overlay.hidden {
@@ -1140,6 +1142,12 @@ em { font-style: italic; }
     width: 54px; height: 54px;
     opacity: 0.9;
     transition: all var(--transition);
+}
+.video-muted-note {
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
 }
 .video-preview:hover .play-icon {
     opacity: 1;
