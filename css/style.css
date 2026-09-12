@@ -225,8 +225,14 @@ em { font-style: italic; }
     max-width: 600px;
     text-align: justify;
     text-align-last: left;
-    hyphens: none;
-    -webkit-hyphens: none;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphenate-limit-chars: 10 5 4;
+    -webkit-hyphenate-limit-before: 5;
+    -webkit-hyphenate-limit-after: 4;
+    -webkit-hyphenate-limit-chars: 10;
+    -moz-hyphenate-limit-chars: 10 5 4;
 }
 .hero-subtitle p {
     margin: 0;
