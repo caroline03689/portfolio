@@ -214,13 +214,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.setAttribute('aria-hidden', 'false');
                 modal.classList.add('open');
                 document.body.style.overflow = 'hidden';
+
+                // Autoplay videos inside the modal (browsers require muted for autoplay)
+                var modalVideos = modalContent.querySelectorAll('video');
+                modalVideos.forEach(function(v) {
+                    v.muted = true;
+                    v.setAttribute('playsinline', '');
+                    v.play().catch(function() {});
+                });
             });
         });
 
         function closeModal() {
-            // Pause any playing video in the modal
+            // Pause and reset any playing video in the modal
             var modalVideos = modalContent.querySelectorAll('video');
-            modalVideos.forEach(function(v) { v.pause(); });
+            modalVideos.forEach(function(v) {
+                v.pause();
+                v.currentTime = 0;
+            });
 
             modal.classList.remove('open');
             modal.setAttribute('aria-hidden', 'true');

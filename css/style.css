@@ -220,12 +220,12 @@ em { font-style: italic; }
 .hero-subtitle {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    line-height: 1.35;
+    line-height: 1.45;
     margin-bottom: var(--space-lg);
-    max-width: 480px;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    max-width: 520px;
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 .hero-subtitle p {
     margin: 0;

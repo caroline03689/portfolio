@@ -56,8 +56,8 @@
                         </button>
                         <div class="contact-popup" id="contact-popup">
                             <div class="contact-popup-inner">
-                                <a href="mailto:caroline03689@gmail.com" class="contact-popup-email">caroline03689@gmail.com</a>
                                 <a href="mailto:caroline_k3@163.com" class="contact-popup-email">caroline_k3@163.com</a>
+                                <a href="mailto:caroline03689@gmail.com" class="contact-popup-email">caroline03689@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -228,8 +228,7 @@
                     <line x1="12" y1="8" x2="12.01" y2="8"/>
                 </svg>
                 <div>
-                    <p data-page-node-id="fTXDA4eiMd4lGdeI4bflFx">Due to NDAs, the samples below are excerpts rather than complete documents, meant to give you a general idea of my work.</p>
-                    <p>Note: The samples have been reformatted for this portfolio and may be missing context, hyperlinks, and interactive elements from the original. As a result, they may not read as smoothly as they do in their original publishing environment.</p>
+                    <p data-page-node-id="fTXDA4eiMd4lGdeI4bflFx">Due to NDAs, the samples below are <strong>excerpts</strong> rather than complete documents, meant to give you a general idea of my work. They have been reformatted for this portfolio and may be <strong>missing context, hyperlinks, and interactive elements</strong>, so they may not read as smoothly as they do in their original publishing environment.</p>
                 </div>
             </div>
 
@@ -632,8 +631,8 @@
                     </button>
                     <div class="contact-popup contact-popup-dark" id="contact-popup-bottom">
                         <div class="contact-popup-inner">
-                            <a href="mailto:caroline03689@gmail.com" class="contact-popup-email">caroline03689@gmail.com</a>
                             <a href="mailto:caroline_k3@163.com" class="contact-popup-email">caroline_k3@163.com</a>
+                            <a href="mailto:caroline03689@gmail.com" class="contact-popup-email">caroline03689@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -735,6 +734,7 @@
                 <h2 data-page-node-id="2lhIZ7B8gCEJsBI7hAIRvg">Cobo Portal onboarding agents</h2>
             </div>
             <div class="modal-sample-body doc-sample" data-page-node-id="6XQS9g3pZMWyt69qzHsBY0">
+                <p class="modal-lead" data-page-node-id="w2OYL9oSsTxYkKW82RBiRm">Learn how Cobo Portal onboarding agents (a set of AI agents invoked by the Cobo AI Assistant during onboarding) guide you through key configurations and your first transaction in the right order.</p>
                 <div class="doc-callout doc-callout-info" data-page-node-id="CdOJVNzFfWSU3SMDTO5vfW">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="FdOR9Zo1owg9y2reqOArTc">
                         <circle cx="12" cy="12" r="10" data-page-node-id="P9mdoFJ3isZGHjbrDUnpGe"/>
@@ -752,7 +752,6 @@
                         <li data-page-node-id="xC5aImoSxYsR1qH81ZsFcW"><a href="#modal-task-how" data-page-node-id="U2qO6hyLrzRPYtBGixGw0h">How to use</a></li>
                     </ul>
                 </nav>
-                <p class="modal-lead" data-page-node-id="w2OYL9oSsTxYkKW82RBiRm">Learn how Cobo Portal onboarding agents (a set of AI agents invoked by the Cobo AI Assistant during onboarding) guide you through key configurations and your first transaction in the right order.</p>
                 <h3 id="modal-task-what" data-page-node-id="vxyyuo4x29m2TbHIrHWOBo">What are Cobo Portal onboarding agents?</h3>
                 <p data-page-node-id="5sfIleFWppp0qg0CT9HhT5">Onboarding agents are a group of collaborating agents invoked by the Cobo AI Assistant during new-user onboarding. They continuously detect your configuration progress and system status, provide clear step-by-step guidance, progress updates, and explanations, and help you complete the essential onboarding steps smoothly.</p>
                 <p>Onboarding agents will suggest the right steps but will not automatically advance critical processes. They act as an on-demand onboarding helper.</p>
@@ -827,12 +826,13 @@
                 <h3 id="modal-ts-happening" data-page-node-id="yXVda69GkrBHiDWLYMpleN">What's happening</h3>
                 <p data-page-node-id="f90KG8Gsvz1qENmEOhLWLB">Your virtual server functionality is disrupted.</p>
                 <h3 id="modal-ts-why" data-page-node-id="kqIltM0Z9XXAbHNoxWiT7d">Why it's happening</h3>
-                <p data-page-node-id="RpGKWLzHkzKQDZLCTj8DTT">Multiple data volumes or workloads are attached. Currently, only a single data volume and a single workload are supported.</p>
+                <p data-page-node-id="RpGKWLzHkzKQDZLCTj8DTT">Multiple data volume or workloads are attached.</p>
                 <h3 id="modal-ts-fix" data-page-node-id="sxBiwACDfpwNt72kjuJM7R">How to fix it</h3>
-                <ul data-page-node-id="4DQ6sX4Hnf23mX3Hncafzh">
-                    <li data-page-node-id="Yw4Fp2LQSYpFu4pCtMmDMM">Attach only a single data volume and workload.</li>
-                    <li data-page-node-id="4sw9SG6iDB6LztM9qZrro2">Ensure the contract is mandatory and correctly configured.</li>
-                </ul>
+                <p>The <a href="https://cloud.ibm.com/docs/vpc?topic=vpc-about-contract_se&format=markdown" target="_blank" rel="noopener">contract</a> is mandatory. Attach only a single data volume and workload.</p>
+                <h4>Single data volume</h4>
+                <p>Currently, only a single data volume is supported. You might not get any explicit errors from VPC if you try to attach more data volumes, but it might disrupt the functionality. When the Hyper Protect Virtual Servers for VPC instance boots, it automatically detects the attached data volume and encrypts it. If it finds more than one data volume, it randomly selects one of them and encrypts it. The container workload stores data into this data volume. When the Hyper Protect Virtual Servers for VPC instance reboots, it follows the same process of randomly picking up one of the attached data volumes and it's possible that it doesn't pick up the one that has workload data. This leads to a situation where the workload no longer has access to its data.</p>
+                <h4>Single workload</h4>
+                <p>Currently, only a single workload is supported. Therefore, only a single workload must be specified as part of the docker-compose file.</p>
             </div>
         </div>
 
