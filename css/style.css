@@ -222,7 +222,7 @@ em { font-style: italic; }
     color: var(--text-secondary);
     line-height: 1.45;
     margin-bottom: var(--space-lg);
-    max-width: 520px;
+    max-width: 600px;
     text-align: justify;
     text-align-last: left;
     hyphens: none;
@@ -1148,6 +1148,12 @@ em { font-style: italic; }
     color: var(--text-tertiary);
     margin-bottom: 0.6rem;
     line-height: 1.5;
+}
+.modal-video-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
 }
 .video-preview:hover .play-icon {
     opacity: 1;
