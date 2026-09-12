@@ -241,6 +241,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Hero Contact Popup ---
+    var contactBtn = document.getElementById('hero-contact-btn');
+    var contactPopup = document.getElementById('contact-popup');
+
+    if (contactBtn && contactPopup) {
+        contactBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            contactPopup.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+            if (!contactPopup.contains(e.target) && e.target !== contactBtn) {
+                contactPopup.classList.remove('open');
+            }
+        });
+    }
+
     // Initial calls
     updateActiveNav();
 });
