@@ -281,6 +281,16 @@ em { font-style: italic; }
 }
 .btn:hover .btn-arrow { transform: translateX(3px); }
 
+.hero-email {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0.25rem;
+    transition: color var(--transition);
+}
+.hero-email:hover { color: var(--accent); }
+
 /* --- Hero Right: Photo --- */
 .hero-right {
     display: flex;
